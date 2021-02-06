@@ -28,6 +28,7 @@ Page({
   onJumpToDetail(event) {
     wx.navigateTo({
       url: '/pages/post-detail/post-detail',
+      
     })
   },
 
