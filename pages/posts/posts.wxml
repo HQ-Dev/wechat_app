@@ -1,0 +1,38 @@
+<!--pages/posts/posts.wxml-->
+<view>
+  <swiper vertical="{{false}}" circular indicator-dots="true" autoplay="true" indicator-color="#838aca">
+    <swiper-item>
+      <image src="/images/nba/洛瑞得到猛龙生涯的第10000分.png"></image>
+    </swiper-item>
+    <swiper-item>
+      <image src="/images/nba/交易走哈登后火箭防守从联盟22上升至联盟第3.png"></image>
+    </swiper-item>
+    <swiper-item>
+      <image src="/images/nba/JAMES年满36连续2场30+队史第二人.jpeg"></image>
+    </swiper-item>
+    <swiper-item>
+      <image src="/images/nba/老鹰全队四人20+难阻失利.png"></image>
+    </swiper-item>
+  </swiper>
+
+<block wx:for="{{post}}">
+  <view bind:tap="onJumpToDetail" class="post-container">
+    <view class="post-author-date">
+      <image class="post-author" src="{{item.avatar}}"></image>
+      <text wx:if="{{flag}}" class="post-date">{{item.postDate}}</text>
+    </view>
+    <text class="post-title">{{item.postTile}}</text>
+    <image class="post-image" src="{{item.postImage}}"></image>
+    <text class="post-content">{{item.postContent}}</text>
+    <view class="post-like">
+      <l-icon class="post-icon-image" size="32" name="favor"/>
+      <text class="post-icon-text">{{item.postFavorText}}</text>
+      <l-icon class="post-icon-image" size="32" name="like"/>
+      <text class="post-icon-text">{{item.postLikeText}}</text>
+      <l-icon class="post-icon-image" size="32" name="comment"/>
+      <text class="post-icon-text">{{item.postComment}}</text>
+    </view>
+  </view>
+</block>
+
+</view>

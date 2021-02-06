@@ -1,45 +1,55 @@
-// pages/welcome/welcome.js
+// pages/posts/posts.js
+
+// var postData = require("../../data/data.js")
+// console.log(postData)
+
+import {postList} from "../../data/data"
+console.log(postList)
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
-  },
-
-  onTap: function(param) {
-    wx.navigateTo({
-      url: '../posts/posts',
-    })
+    flag:true
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+      console.log("onLoad")
+    //   var content = [
+    // ]
+      this.setData({post:postList});
+  },
 
+  onJumpToDetail(event) {
+    wx.navigateTo({
+      url: '/pages/post-detail/post-detail',
+    })
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    console.log("onReady");
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    console.log("onShow")
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-
+    console.log("onHide...切后台...页面隐藏...");
   },
 
   /**

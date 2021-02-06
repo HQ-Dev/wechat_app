@@ -1,4 +1,4 @@
-// pages/welcome/welcome.js
+// pages/post-detail/post-detail.js
 Page({
 
   /**
@@ -8,11 +8,6 @@ Page({
 
   },
 
-  onTap: function(param) {
-    wx.navigateTo({
-      url: '../posts/posts',
-    })
-  },
 
   /**
    * 生命周期函数--监听页面加载
