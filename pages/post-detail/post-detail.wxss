@@ -1,1 +1,87 @@
 /* pages/post-detail/post-detail.wxss */
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.head-image {
+  width:100%;
+}
+
+.avatar-title-container {
+  display:flex;
+  flex-direction: row;
+  margin-top: 20rpx;
+  margin-left: 40rpx;
+  align-items: center;
+}
+
+.avatar {
+  width:64rpx;
+  height:64rpx;
+}
+
+.author {
+  font-size: 30rpx;
+  font-weight: 300;
+  margin-left: 20rpx;
+  color: #666;
+}
+
+.const-text {
+  font-size: 24rpx;
+  color: #999;
+  margin-left: 20rpx;
+}
+
+.date {
+  font-size: 24rpx;
+  margin-left: 30rpx;
+  color:#999;
+}
+
+.title {
+  margin-left: 40rpx;
+  font-size: 36rpx;
+  font-weight: 700;
+  margin-top: 30rpx;
+  color: #4b556c;
+  letter-spacing: 2rpx;
+}
+
+.icon-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.circle {
+  width: 660rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.circle image {
+  width: 90rpx;
+  height:90rpx;
+}
+
+.horizon {
+  width: 660rpx;
+  height: 1px;
+  background-color: #e5e5e5;
+  position: absolute;
+  z-index: -99;
+}
+
+.detail {
+  color:#666;
+  margin-left: 40rpx;
+  margin-top:20rpx;
+  margin-right: 40rpx;
+  line-height: 44rpx;
+  letter-spacing: 2rpx;
+}

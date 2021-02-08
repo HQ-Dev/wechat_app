@@ -1,2 +1,19 @@
-<!--pages/post-detail/post-detail.wxml-->
-<text>pages/post-detail/post-detail.wxml</text>
+<view class="container">
+  <image class="head-image" src="/images/news/爱因斯坦的子女们.jpeg"></image>  
+  <view class="avatar-title-container">
+    <image class="avatar" src="/images/avatar/爱因斯坦.jpeg"></image>
+    <text class="author">爱斯</text>
+    <text class="const-text">发表于</text>
+    <text class="date">10个小时前</text>
+  </view>
+  <text class="title">爱因斯坦的子女们</text>
+  <view class="icon-container">
+    <view class="circle">
+      <image src="/images/icons/收藏.svg"></image>
+      <image src="/images/icons/评论.svg"></image>
+    </view>
+    <view class="horizon"></view>
+  </view>
+  
+  <text class="detail">瑞士联邦工学院1897级学习理论物理的学生共有5个，米列娃是其中唯一的女生，米列娃的独特气质与专业知识，深深吸引了爱因斯坦。</text>
+</view>
