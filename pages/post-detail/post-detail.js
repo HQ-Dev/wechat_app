@@ -1,7 +1,7 @@
 // pages/post-detail/post-detail.js
 
 import {postList} from "../../data/data"
-
+const app = getApp();
 Page({
 
   /**
@@ -16,10 +16,12 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(options)
     const postData = postList[options.pid]
-    console.log(postData)
     this.setData({postData})
+    console.log(app.test)
+
+    wx.setStorageSync('flag', true)
+
   },
 
   /**
