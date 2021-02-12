@@ -15,13 +15,17 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+   onLoad: async function (options) {
     const postData = postList[options.pid]
     this.setData({postData})
     console.log(app.test)
 
-    wx.setStorageSync('flag', true)
-
+    wx.setStorageSync('flag', 2)
+    const flag = await wx.getStorage({
+      key: 'flag',
+    })
+    console.log(flag)
+    
   },
 
   /**
