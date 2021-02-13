@@ -9,7 +9,7 @@
   <text class="title">{{postData.postTitle}}</text>
   <view class="icon-container">
     <view class="circle">
-      <image src="/images/icons/收藏.svg"></image>
+      <image bind:tap="onCollected" src="/images/icons/收藏.svg"></image>
       <image src="/images/icons/评论.svg"></image>
     </view>
     <view class="horizon"></view>

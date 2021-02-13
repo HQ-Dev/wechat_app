@@ -8,7 +8,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    postData:{}
+    postData:{},
+    _pid:null
   },
 
 
@@ -17,6 +18,7 @@ Page({
    */
    onLoad: async function (options) {
     const postData = postList[options.pid]
+    this.data._pid = options.pid
     this.setData({postData})
     console.log(app.test)
 
@@ -25,7 +27,12 @@ Page({
       key: 'flag',
     })
     console.log(flag)
-    
+  },
+
+  onCollected(event) {
+    const status = {}
+    status[this.data._pid]  = true
+    wx.setStorageSync('posts_collected', status)
   },
 
   /**
