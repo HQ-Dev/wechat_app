@@ -1,7 +1,9 @@
 // pages/post-detail/post-detail.js
 
 import {postList} from "../../data/data"
+// 小程序所有 js 文件中都能获取到
 const app = getApp();
+
 Page({
 
   /**
@@ -9,7 +11,8 @@ Page({
    */
   data: {
     postData:{},
-    _pid:null
+    _pid:null,
+    collected:false
   },
 
 
@@ -17,22 +20,30 @@ Page({
    * 生命周期函数--监听页面加载
    */
    onLoad: async function (options) {
+     // 测试 App.js 中的全局变量打印
+    console.log(app.test)
+
+    // 获取文章 pid ，中转保存到本 js 的定义变量中
     const postData = postList[options.pid]
     this.data._pid = options.pid
     this.setData({postData})
-    console.log(app.test)
 
+    // 同步设置小程序缓存；异步读取；然后打印小程序缓存
     wx.setStorageSync('flag', 2)
     const flag = await wx.getStorage({
-      key: 'flag',
+      key: 'flag'
     })
     console.log(flag)
   },
 
-  onCollected(event) {
+  // 文章收藏事件
+  onCollection(event) {
     const status = {}
     status[this.data._pid]  = true
     wx.setStorageSync('posts_collected', status)
+    this.setData({
+      collected:true
+    })
   },
 
   /**

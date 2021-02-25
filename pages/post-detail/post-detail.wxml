@@ -9,7 +9,8 @@
   <text class="title">{{postData.postTitle}}</text>
   <view class="icon-container">
     <view class="circle">
-      <image bind:tap="onCollected" src="/images/icons/收藏.svg"></image>
+      <image wx:if="{{!collected}}" bind:tap="onCollection" src="/images/icons/未收藏.png"></image>
+      <image wx:else bind:tap="onCollection" src="/images/icons/已收藏.png"></image>
       <image src="/images/icons/评论.svg"></image>
     </view>
     <view class="horizon"></view>
