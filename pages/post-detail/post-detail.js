@@ -58,6 +58,10 @@ Page({
     this.setData({
       collected:!this.data.collected
     })
+
+    wx.showToast({
+      title: (this.data.collected ? "收藏成功":"取消收藏")
+    })
   },
 
   /**
