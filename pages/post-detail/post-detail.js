@@ -64,6 +64,16 @@ Page({
     })
   },
 
+  async sharePost(event) {
+    const result = await wx.showActionSheet({
+      itemList: ["分享到微博","分享到朋友圈","分享到微信","分享到支付宝"],
+      // success(res) {
+      //   console.log(res)
+      // }
+    })
+    console.log(result)
+  },
+
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
