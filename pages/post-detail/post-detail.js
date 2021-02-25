@@ -12,7 +12,8 @@ Page({
   data: {
     postData:{},
     _pid:null,
-    collected:false
+    collected:false,
+    _postCollected:{}
   },
 
 
@@ -29,8 +30,15 @@ Page({
     this.setData({postData})
 
     // 获取文章收藏状态
-    const posts_collected = wx.getStorageSync('posts_collected');
-    const collected = posts_collected[this.data._pid];
+    const postsCollected = wx.getStorageSync('posts_collected');
+    this.data._postCollected = postsCollected;
+    const collected = postsCollected[this.data._pid];
+
+    if (collected === undefined) {
+      collected = false
+    }
+
+    console.log(collected)
     this.setData({
       collected
     })
@@ -44,11 +52,11 @@ Page({
 
   // 文章收藏事件
   onCollection(event) {
-    const status = {}
-    status[this.data._pid]  = true
+    const status = this.data._postCollected;
+    status[this.data._pid]  = !this.data.collected
     wx.setStorageSync('posts_collected', status)
     this.setData({
-      collected:true
+      collected:!this.data.collected
     })
   },
 
