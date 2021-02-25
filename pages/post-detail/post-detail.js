@@ -28,12 +28,18 @@ Page({
     this.data._pid = options.pid
     this.setData({postData})
 
-    // 同步设置小程序缓存；异步读取；然后打印小程序缓存
-    wx.setStorageSync('flag', 2)
-    const flag = await wx.getStorage({
-      key: 'flag'
+    // 获取文章收藏状态
+    const posts_collected = wx.getStorageSync('posts_collected');
+    const collected = posts_collected[this.data._pid];
+    this.setData({
+      collected
     })
-    console.log(flag)
+    // 同步设置小程序缓存；异步读取；然后打印小程序缓存
+    // wx.setStorageSync('flag', 2)
+    // const flag = await wx.getStorage({
+    //   key: 'flag'
+    // })
+    // console.log(flag)
   },
 
   // 文章收藏事件
