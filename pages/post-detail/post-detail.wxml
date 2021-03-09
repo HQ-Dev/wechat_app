@@ -1,5 +1,6 @@
 <view class="container">
-  <image class="head-image" src="{{postData.avatar}}"></image>  
+  <image class="head-image" src="{{postData.avatar}}"></image>
+  <image class="audio" src="/images/music/music-start.png"/>  
   <view class="avatar-title-container">
     <image class="avatar" src="{{postData.postImage}}"></image>
     <text class="author">{{postData.author}}</text>
