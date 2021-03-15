@@ -13,7 +13,8 @@ Page({
     postData:{},
     _pid:null,
     collected:false,
-    _postCollected:{}
+    _postCollected:{},
+    isPlaying:false,
   },
 
 
@@ -72,6 +73,25 @@ Page({
       // }
     })
     console.log(result)
+  },
+
+  musicStart(event) {
+    const musicManger = wx.getBackgroundAudioManager();
+    const music = postList[this.data._pid].music;
+    musicManger.src = music.url;
+    musicManger.title = music.title;
+    musicManger.coverImgUrl = music.coverImg;
+    this.setData({
+      isPlaying:true
+    })
+  },
+
+  musicStop(event) {
+    const musicManager = wx.getBackgroundAudioManager();
+    musicManager.pause();
+    this.setData({
+      isPlaying:false
+    })
   },
 
   /**

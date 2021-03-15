@@ -94,4 +94,5 @@
   left: 50%;
   margin-left: -51rpx;
   top: 195rpx;
+  opacity: 0.6;
 }

@@ -10,7 +10,12 @@ var postList = [
     postFavorText:"92",
     postLikeText:"102",
     postComment:"30",
-    postId:0
+    postId:0,
+    music: {
+      url: "http://music.163.com/song/media/outer/url?id=1372060183.mp3",
+        title: "空-徐海俏",
+        coverImg: "https://y.gtimg.cn/music/photo_new/T002R300x300M000002sNbWp3royJG_1.jpg?max_age=2592000",
+    }
   },
   {
     avatar:"/images/avatar/特朗普.jpg",
@@ -23,7 +28,12 @@ var postList = [
     postFavorText:"286",
     postLikeText:"3300",
     postComment:"1200",
-    postId:1
+    postId:1,
+    music: {
+      url: "http://music.163.com/song/media/outer/url?id=1386866050.mp3",
+        title: "笑看风云",
+        coverImg: "https://y.gtimg.cn/music/photo_new/T002R300x300M000002sNbWp3royJG_1.jpg?max_age=2592000"
+    }
   }
 ] 
 

@@ -2,5 +2,6 @@ App({
   onLaunch(option) {
     
   },
-  test:"Happy 🐂 year!"
+  test:"Happy 🐂 year!",
+  
 })
