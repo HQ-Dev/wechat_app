@@ -15,6 +15,7 @@ Page({
     collected:false,
     _postCollected:{},
     isPlaying:false,
+    _musicManager:null,
   },
 
 
@@ -24,12 +25,10 @@ Page({
    onLoad: async function (options) {
      // 测试 App.js 中的全局变量打印
     console.log(app.test)
-
     // 获取文章 pid ，中转保存到本 js 的定义变量中
     const postData = postList[options.pid]
     this.data._pid = options.pid
     this.setData({postData})
-
     // 获取文章收藏状态
     const postsCollected = wx.getStorageSync('posts_collected');
     this.data._postCollected = postsCollected;
@@ -38,10 +37,9 @@ Page({
     if (collected === undefined) {
       collected = false
     }
-
-    console.log(collected)
     this.setData({
-      collected
+      collected,
+      isPlaying:this.isPostMusicPlaying()
     })
     // 同步设置小程序缓存；异步读取；然后打印小程序缓存
     // wx.setStorageSync('flag', 2)
@@ -49,6 +47,12 @@ Page({
     //   key: 'flag'
     // })
     // console.log(flag)
+
+    const musicManger = wx.getBackgroundAudioManager();
+    this.data._musicManager = musicManger;
+    musicManger.onPlay(this.musicStart);
+    musicManger.onPause(this.musicPause);
+
   },
 
   // 文章收藏事件
@@ -76,22 +80,33 @@ Page({
   },
 
   musicStart(event) {
-    const musicManger = wx.getBackgroundAudioManager();
+    // const musicManger = wx.getBackgroundAudioManager();
     const music = postList[this.data._pid].music;
-    musicManger.src = music.url;
-    musicManger.title = music.title;
-    musicManger.coverImgUrl = music.coverImg;
+    this.data._musicManager.src = music.url;
+    this.data._musicManager.title = music.title;
+    this.data._musicManager.coverImgUrl = music.coverImg;
     this.setData({
       isPlaying:true
-    })
+    });
+    app.isMusicPlaying = true;
+    app.playingMusicId = this.data._pid;
   },
 
-  musicStop(event) {
-    const musicManager = wx.getBackgroundAudioManager();
-    musicManager.pause();
+  musicPause(event) {
+    // const musicManager = wx.getBackgroundAudioManager();
+    this.data._musicManager.pause();
     this.setData({
       isPlaying:false
     })
+    app.isMusicPlaying = false;
+    app.playingMusicId = this.data._pid;
+  },
+
+  isPostMusicPlaying() {
+    if (app.isMusicPlaying && app.playingMusicId == this.data._pid) {
+      return true;
+    }
+    return false;
   },
 
   /**
