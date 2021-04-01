@@ -16,23 +16,7 @@
   </swiper>
 
 <block wx:for="{{post}}">
-  <view data-id="{{item.postId}}" bind:tap="onJumpToDetail" class="post-container">
-    <view class="post-author-date">
-      <image class="post-author" src="{{item.avatar}}"></image>
-      <text wx:if="{{flag}}" class="post-date">{{item.postDate}}</text>
-    </view>
-    <text class="post-title">{{item.postTile}}</text>
-    <image class="post-image" src="{{item.postImage}}"></image>
-    <text class="post-content">{{item.postContent}}</text>
-    <view class="post-like">
-      <l-icon class="post-icon-image" size="32" name="favor"/>
-      <text class="post-icon-text">{{item.postFavorText}}</text>
-      <l-icon class="post-icon-image" size="32" name="like"/>
-      <text class="post-icon-text">{{item.postLikeText}}</text>
-      <l-icon class="post-icon-image" size="32" name="comment"/>
-      <text class="post-icon-text">{{item.postComment}}</text>
-    </view>
-  </view>
+  <post res="{{item}}"></post>
 </block>
 
 </view>

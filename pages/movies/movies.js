@@ -1,4 +1,4 @@
-// pages/welcome/welcome.js
+// pages/movies/movies.js
 Page({
 
   /**
@@ -6,16 +6,6 @@ Page({
    */
   data: {
 
-  },
-
-  onTap: function(param) {
-    // 该页面使用 tabBar, 使用 navigateTo 会报错
-    // wx.navigateTo({
-    //   url: '../posts/posts',
-    // })
-    wx.switchTab({
-      url: '../posts/posts',
-    })
   },
 
   /**

@@ -2,14 +2,33 @@
   "pages": [
     "pages/welcome/welcome",
     "pages/posts/posts",
-    "pages/post-detail/post-detail"
+    "pages/post-detail/post-detail",
+    "pages/movies/movies"
   ],
   "window": {
     "navigationBarBackgroundColor": "#d03f2a"
+  },
+  "tabBar": {
+    "position": "bottom",
+    "list":[
+      {
+        "text":"新闻",
+        "pagePath":"pages/posts/posts",
+        "iconPath": "/images/tab/yuedu.png",
+        "selectedIconPath": "/images/tab/yuedu_hl.png"
+      },
+      {
+        "text":"电影",
+        "pagePath": "pages/movies/movies",
+        "iconPath": "/images/tab/movie.png",
+        "selectedIconPath": "/images/tab/movie@highlight.png"
+      }
+    ]
   },
   "requiredBackgroundModes": [
     "audio",
     "location"
   ],
   "sitemapLocation": "sitemap.json"
+  
 }
