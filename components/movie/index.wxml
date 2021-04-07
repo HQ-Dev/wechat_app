@@ -1,4 +1,5 @@
 <!--components/movie/index.wxml-->
-<view>
-  
+<view class="container">
+  <image class="poster" src="/images/5.png"></image>
+  <text class="title">姐姐来了</text>
 </view>
