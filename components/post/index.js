@@ -18,6 +18,14 @@ Component({
    * 组件的方法列表
    */
   methods: {
+    onJumpToDetail(event) {
 
+      const pid = event.currentTarget.dataset.id;
+      wx.navigateTo({
+        url: '/pages/post-detail/post-detail?pid='+pid
+      })
+    },
   }
+
+  
 })
