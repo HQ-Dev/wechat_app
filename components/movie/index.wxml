@@ -2,4 +2,8 @@
 <view class="container">
   <image class="poster" src="/images/5.png"></image>
   <text class="title">姐姐来了</text>
+  <view class="rate-container">
+    <l-score disabled="{{true}}" size="22" score="4.4"></l-score>
+    <text class="score">4.4</text>
+  </view>
 </view>

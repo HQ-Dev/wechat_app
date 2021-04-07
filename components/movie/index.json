@@ -1,4 +1,6 @@
 {
   "component": true,
-  "usingComponents": {}
+  "usingComponents": {
+    "l-score":"/miniprogram_npm/lin-ui/rate/index"
+  }
 }

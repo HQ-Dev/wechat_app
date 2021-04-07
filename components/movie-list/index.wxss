@@ -1,1 +1,19 @@
 /* components/movie-list/index.wxss */
+
+.container {
+  padding: 36rpx 28rpx;
+}
+
+.title-container {
+  display: flex;
+  flex-direction: row;
+  /* “正在热映” “更多” 两个文本两边靠边，中间隔开布局 */
+  justify-content: space-between;
+  margin-bottom: 20rpx;
+}
+
+.view-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
