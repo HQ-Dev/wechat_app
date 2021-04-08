@@ -2,6 +2,7 @@
 
 .container {
   padding: 36rpx 28rpx;
+  background-color: #ffffff;
 }
 
 .title-container {
@@ -16,4 +17,8 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+}
+
+.more-text {
+  color: #1f4ba5;
 }
