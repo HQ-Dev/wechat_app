@@ -1,7 +1,7 @@
 <!--pages/movies/movies.wxml-->
 
-<movie-list l-class="movie-list" />
+<movie-list movies="{{inTheaters}}" title="正在上映" l-class="movie-list" />
 
-<movie-list l-class="movie-list" />
+<movie-list title="即将上映" l-class="movie-list" />
 
-<movie-list l-class="movie-list" />
+<movie-list title="TOP250" l-class="movie-list" />

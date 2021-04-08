@@ -6,7 +6,8 @@ Component({
 
   externalClasses: ['l-class'],
   properties: {
-
+    title:String,
+    movies:Array
   },
 
   /**

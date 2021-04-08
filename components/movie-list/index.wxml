@@ -1,12 +1,16 @@
 <!--components/movie-list/index.wxml-->
 <view class="container l-class">
   <view class="title-container">
-    <text>正在热映</text>
+    <text>{{title}}</text>
     <text class="more-text">更多 ></text>
   </view>
   <view class="view-container">
-    <movie />
-    <movie />
-    <movie />
+    <block wx:for="{{movies}}" wx:key="index">
+      <movie movie="{{item}}"/>
+    </block>
+
+    <!-- <movie movie="{{movies[0]}}"/>
+    <movie movie="{{movies[1]}}"/>
+    <movie movie="{{movies[2]}}"/> -->
   </view>
 </view>
