@@ -6,4 +6,5 @@ App({
   isMusicPlaying:false,
   playingMusicId:-1,
   
+  commonUrl:"http://t.talelin.com/v2/movie/",
 })

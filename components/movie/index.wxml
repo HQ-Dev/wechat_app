@@ -1,9 +1,9 @@
 <!--components/movie/index.wxml-->
 <view class="container">
-  <image class="poster" src="/images/5.png"></image>
-  <text class="title">姐姐来了</text>
+  <image class="poster" src="{{movie.images.large}}"></image>
+  <text class="title">{{movie.title}}</text>
   <view class="rate-container">
-    <l-score disabled="{{true}}" size="22" score="4.4"></l-score>
-    <text class="score">4.4</text>
+    <l-score disabled="{{true}}" size="22" score="{{movie.rating.stars / 10}}"></l-score>
+    <text class="score">{{movie.rating.average}}</text>
   </view>
 </view>

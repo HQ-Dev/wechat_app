@@ -2,6 +2,6 @@
 
 <movie-list movies="{{inTheaters}}" title="正在上映" l-class="movie-list" />
 
-<movie-list title="即将上映" l-class="movie-list" />
+<movie-list movies="{{comingSoon}}" title="即将上映" l-class="movie-list" />
 
-<movie-list title="TOP250" l-class="movie-list" />
+<movie-list movies="{{top250}}" title="TOP250" l-class="movie-list" />
