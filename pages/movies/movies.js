@@ -41,19 +41,23 @@ Page({
         })
       }
     }),
-    doMovieRequest(top250)
-    
-  },
-
-  doMovieRequest: function(movieType) {
+    // doMovieRequest(top250)
     wx.request({
-      url: app.commonUrl + movieType + '?start=0&count=3',
+      url: app.commonUrl + 'top250?start=0&count=3',
       success : (res)=> {
         console.log(res)
         this.setData({
-          movieType:res.data.subjects
+          top250:res.data.subjects
         })
       }
+    })
+    
+  },
+
+  onGoToMore: function(event) {
+    const type = event.currentTarget.dataset.type;
+    wx.navigateTo({
+      url: '/pages/more-movie/more-movie?type='+type,
     })
   },
 

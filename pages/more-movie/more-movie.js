@@ -14,8 +14,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    const movieType = options.type;
     wx.request({
-      url: app.commonUrl + 'in_theaters',
+      url: app.commonUrl + movieType,
       data:{
         start:0,
         count:11
