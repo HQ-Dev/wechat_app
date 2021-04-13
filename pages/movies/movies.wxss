@@ -5,5 +5,9 @@
 }
 
 page {
-  background-color: #585854;
+  background-color: gainsboro;
+}
+
+.l-search-class {
+  height: 90rpx;
 }
