@@ -1,4 +1,4 @@
-// pages/movies/movies.js
+// pages/more-movie/more-movie.js
 
 const app = getApp();
 Page({
@@ -7,10 +7,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    // 正在上映的电影
-    inTheaters:[],
-    comingSoon:[],
-    top250:[]
+    movies:[]
   },
 
   /**
@@ -19,39 +16,13 @@ Page({
   onLoad: function (options) {
     wx.request({
       url: app.commonUrl + 'in_theaters',
-      // 使用剪头函数，下面的 this.setData 中的 this 可以正常获取，不然会报错误：cannot read property
-      // 'setData' of undefined
       data:{
         start:0,
-        count:3
+        count:11
       },
       success : (res)=> {
-        console.log(res)
         this.setData({
-          inTheaters:res.data.subjects
-        })
-      }
-    }),
-    wx.request({
-      url: app.commonUrl + 'coming_soon?start=0&count=3',
-      success : (res)=> {
-        console.log(res)
-        this.setData({
-          comingSoon:res.data.subjects
-        })
-      }
-    }),
-    doMovieRequest(top250)
-    
-  },
-
-  doMovieRequest: function(movieType) {
-    wx.request({
-      url: app.commonUrl + movieType + '?start=0&count=3',
-      success : (res)=> {
-        console.log(res)
-        this.setData({
-          movieType:res.data.subjects
+          movies:res.data.subjects
         })
       }
     })

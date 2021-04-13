@@ -1,0 +1,8 @@
+/* pages/more-movie/more-movie.wxss */
+
+.container {
+  display: flex;
+  flex-direction: row;
+  /* 换行 */
+  flex-wrap: wrap;
+}
