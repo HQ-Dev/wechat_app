@@ -7,7 +7,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    movies:[]
+    movies:[],
+    _movieType:'',
   },
 
   /**
@@ -15,6 +16,7 @@ Page({
    */
   onLoad: function (options) {
     const movieType = options.type;
+    this._movieType = movieType;
     wx.request({
       url: app.commonUrl + movieType,
       data:{
@@ -68,7 +70,19 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-
+    console.log(this.movies)
+    wx.request({
+      url: app.commonUrl + this._movieType,
+      data:{
+        start:this.data.movies.length,
+        count:12
+      },
+      success : (res)=> {
+        this.setData({
+          movies:this.data.movies.concat(res.data.subjects)
+        })
+      }
+    })
   },
 
   /**

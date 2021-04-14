@@ -1,6 +1,5 @@
 <!--pages/movies/movies.wxml-->
-<l-search-bar bind:linconfirm="listenConfirm" l-class="l-search-class" placeholder="我的姐姐"/>
-
+<l-search-bar bind:lincancel="onSearchCancel" bind:linconfirm="listenConfirm" l-class="l-search-class" placeholder="我的姐姐"/>
 <view wx:if="{{!searchResult}}">
   <movie-list data-type="in_theaters" bind:tap="onGoToMore" movies="{{inTheaters}}" title="正在 上映" l-class="movie-list" />
   <movie-list data-type="coming_soon" bind:tap="onGoToMore" movies="{{comingSoon}}" title="即将上映" l-class="movie-list" />
