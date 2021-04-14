@@ -3,5 +3,6 @@
     "movie-list":"/components/movie-list/index",
     "l-search-bar":"/miniprogram_npm/lin-ui/search-bar",
     "movie":"/components/movie"
-  }
+  },
+  "navigationBarTitleText": "光与影"
 }
