@@ -1,7 +1,11 @@
 <!--pages/movies/movies.wxml-->
-<l-search-bar l-class="l-search-class" placeholder="我的姐姐"/>
-<movie-list data-type="in_theaters" bind:tap="onGoToMore" movies="{{inTheaters}}" title="正在上映" l-class="movie-list" />
+<l-search-bar bind:linconfirm="listenConfirm" l-class="l-search-class" placeholder="我的姐姐"/>
 
-<movie-list data-type="coming_soon" bind:tap="onGoToMore" movies="{{comingSoon}}" title="即将上映" l-class="movie-list" />
-
-<movie-list data-type="top250" bind:tap="onGoToMore" movies="{{top250}}" title="TOP250" l-class="movie-list" />
+<view wx:if="{{!searchResult}}">
+  <movie-list data-type="in_theaters" bind:tap="onGoToMore" movies="{{inTheaters}}" title="正在 上映" l-class="movie-list" />
+  <movie-list data-type="coming_soon" bind:tap="onGoToMore" movies="{{comingSoon}}" title="即将上映" l-class="movie-list" />
+  <movie-list data-type="top250" bind:tap="onGoToMore" movies="{{top250}}" title="TOP250" l-class="movie-list" />
+</view>
+<view wx:else>
+  搜索结果
+</view>

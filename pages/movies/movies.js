@@ -10,7 +10,8 @@ Page({
     // 正在上映的电影
     inTheaters:[],
     comingSoon:[],
-    top250:[]
+    top250:[],
+    searchResult:false,
   },
 
   /**
@@ -58,6 +59,22 @@ Page({
     const type = event.currentTarget.dataset.type;
     wx.navigateTo({
       url: '/pages/more-movie/more-movie?type='+type,
+    })
+  },
+
+  listenConfirm(event) {
+    const searchContent = event.detail.value;
+    console.log(event)
+    wx.request({
+      url: app.commonUrl + 'search?q=',
+      data: {
+        q: searchContent
+      },
+      success: (res) => {
+        this.setData({
+          searchResult:true
+        })
+      }
     })
   },
 
