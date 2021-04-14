@@ -11,3 +11,15 @@ page {
 .l-search-class {
   height: 90rpx;
 }
+
+.searchContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 30rpx 28rpx;
+  justify-content: space-between;
+}
+
+.movie {
+  margin-bottom: 35rpx;
+}

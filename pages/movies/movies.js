@@ -12,6 +12,7 @@ Page({
     comingSoon:[],
     top250:[],
     searchResult:false,
+    searchData:[]
   },
 
   /**
@@ -71,8 +72,10 @@ Page({
         q: searchContent
       },
       success: (res) => {
+        console.log(res);
         this.setData({
-          searchResult:true
+          searchResult:true,
+          searchData:res.data.subjects
         })
       }
     })

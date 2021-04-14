@@ -6,6 +6,8 @@
   <movie-list data-type="coming_soon" bind:tap="onGoToMore" movies="{{comingSoon}}" title="即将上映" l-class="movie-list" />
   <movie-list data-type="top250" bind:tap="onGoToMore" movies="{{top250}}" title="TOP250" l-class="movie-list" />
 </view>
-<view wx:else>
-  搜索结果
+<view wx:else class="searchContainer">
+  <block wx:for="{{searchData}}" wx:key="index">
+    <movie class="movie" movie="{{item}}"></movie>
+  </block>
 </view>
