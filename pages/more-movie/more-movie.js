@@ -27,6 +27,7 @@ Page({
         this.setData({
           movies:res.data.subjects
         })
+        wx.hideNavigationBarLoading();
       }
     })
   },
@@ -35,7 +36,9 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    wx.showNavigationBarLoading({
+      success: (res) => {},
+    })
   },
 
   /**
@@ -81,6 +84,7 @@ Page({
         this.setData({
           movies:this.data.movies.concat(res.data.subjects)
         })
+        wx.hideNavigationBarLoading();
       }
     })
   },
