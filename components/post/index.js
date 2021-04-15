@@ -19,8 +19,11 @@ Component({
    */
   methods: {
     ontap(event) {
-
-      this.triggerEvent('goToDetail');
+      const pid = event.currentTarget.dataset.id;
+      this.triggerEvent('posttap',{
+        pid,
+        test:2
+      });
       // const pid = event.currentTarget.dataset.id;
       // wx.navigateTo({
       //   url: '/pages/post-detail/post-detail?pid='+pid

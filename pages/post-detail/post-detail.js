@@ -24,20 +24,23 @@ Page({
    */
    onLoad: async function (options) {
      // 测试 App.js 中的全局变量打印
-    console.log(app.test)
+    // console.log(app.test)
     // 获取文章 pid ，中转保存到本 js 的定义变量中
     const postData = postList[options.pid]
     this.data._pid = options.pid
-    this.setData({postData})
     // 获取文章收藏状态
     const postsCollected = wx.getStorageSync('posts_collected');
-    this.data._postCollected = postsCollected;
-    const collected = postsCollected[this.data._pid];
+    if(postsCollected){
+      this.data._postsCollected = postsCollected
+    }
+
+    let collected = postsCollected[this.data._pid];
 
     if (collected === undefined) {
       collected = false
     }
     this.setData({
+      postData,
       collected,
       isPlaying:this.isPostMusicPlaying()
     })

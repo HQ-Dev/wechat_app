@@ -32,12 +32,13 @@ Page({
   //   })
   // },
 
-  goToDetail(event) {
-    console.log('111')
-    // const pid = event.currentTarget.dataset.id;
-    // wx.navigateTo({
-    //   url: '/pages/post-detail/post-detail?pid='+pid
-    // })
+  onGoToDetail(event) {
+    console.log(event)
+    const pid = event.detail.pid;
+
+    wx.navigateTo({
+      url: '/pages/post-detail/post-detail?pid='+pid
+    })
   },
 
   /**
@@ -58,7 +59,7 @@ Page({
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-    console.log("onHide...切后台...页面隐藏...");
+    // console.log("onHide...切后台...页面隐藏...");
   },
 
   /**

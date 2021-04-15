@@ -1,7 +1,7 @@
 {
   "usingComponents": {
     "l-icon":"/miniprogram_npm/lin-ui/icon",
-    "post":"/components/post"
+    "post":"/components/post/index"
   },
   "window": {
     "navigationBarBackgroundColor": "#d03f2a"
