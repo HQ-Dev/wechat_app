@@ -1,5 +1,5 @@
 <!--components/post/index.wxml-->
-<view data-id="{{res.postId}}" bind:tap="onJumpToDetail" class="post-container">
+<view data-id="{{res.postId}}" bind:tap="ontap" class="post-container">
     <view class="post-author-date">
       <image class="post-author" src="{{res.avatar}}"></image>
       <text wx:if="{{flag}}" class="post-date">{{res.postDate}}</text>

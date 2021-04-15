@@ -18,12 +18,13 @@ Component({
    * 组件的方法列表
    */
   methods: {
-    onJumpToDetail(event) {
+    ontap(event) {
 
-      const pid = event.currentTarget.dataset.id;
-      wx.navigateTo({
-        url: '/pages/post-detail/post-detail?pid='+pid
-      })
+      this.triggerEvent('goToDetail');
+      // const pid = event.currentTarget.dataset.id;
+      // wx.navigateTo({
+      //   url: '/pages/post-detail/post-detail?pid='+pid
+      // })
     },
   }
 

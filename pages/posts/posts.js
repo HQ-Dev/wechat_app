@@ -7,7 +7,6 @@ import {postList} from "../../data/data"
 console.log(postList)
 
 Page({
-
   /**
    * 页面的初始数据
    */
@@ -25,12 +24,20 @@ Page({
       this.setData({post:postList});
   },
 
-  onJumpToDetail(event) {
+  // onJumpToDetail(event) {
 
-    const pid = event.currentTarget.dataset.id;
-    wx.navigateTo({
-      url: '/pages/post-detail/post-detail?pid='+pid
-    })
+  //   const pid = event.currentTarget.dataset.id;
+  //   wx.navigateTo({
+  //     url: '/pages/post-detail/post-detail?pid='+pid
+  //   })
+  // },
+
+  goToDetail(event) {
+    console.log('111')
+    // const pid = event.currentTarget.dataset.id;
+    // wx.navigateTo({
+    //   url: '/pages/post-detail/post-detail?pid='+pid
+    // })
   },
 
   /**
