@@ -19,10 +19,10 @@ Component({
    */
   methods: {
     ontap(event) {
+      console.log(this.properties.res)
       const pid = event.currentTarget.dataset.id;
       this.triggerEvent('posttap',{
         pid,
-        test:2
       });
       // const pid = event.currentTarget.dataset.id;
       // wx.navigateTo({
@@ -30,6 +30,4 @@ Component({
       // })
     },
   }
-
-  
 })

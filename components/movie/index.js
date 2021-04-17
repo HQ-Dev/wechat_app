@@ -1,4 +1,5 @@
 // components/movie/index.js
+const app = getApp();
 Component({
   /**
    * 组件的属性列表
@@ -19,5 +20,13 @@ Component({
    */
   methods: {
 
+    onGoToDetail(event) {
+      // console.log("movie 的" + this.properties.movie.id)
+      let mid = this.properties.movie.id;
+      wx.navigateTo({
+        url: "/pages/movie-detail/movie-detail?mid=" + mid,
+      })
+      
+    }
   }
 })
