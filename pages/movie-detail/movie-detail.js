@@ -1,11 +1,13 @@
 // pages/movie-detail/movie-detail.js
+
+let app = getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    movie:{}
   },
 
   /**
@@ -16,6 +18,12 @@ Page({
     console.log("获取到电影参数为：" + mid)
     wx.request({
       url: app.commonUrl + "subject/" + mid,
+      success : (res) => {
+        console.log(res.data)
+        this.setData({
+          movie : res.data
+        })
+      }
     })
   },
 
